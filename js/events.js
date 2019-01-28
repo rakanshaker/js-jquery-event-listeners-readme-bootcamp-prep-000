@@ -1,22 +1,36 @@
 //define functions here
 
-$(document).ready(function(){
+function getIt(){
+  $('p').on('click', function(){
+    alert('Hey!');
+  });
+}
 
-$('p').on('click', function getIt(){
-   alert('Hey!');
-}); 
+function frameIt(){
+  $('img').on('load', function(){
+     $('img').addClass('tasty');
+  });
+}
 
-$('img').on('load', function frameIt(){
-  $('img').addClass('tasty');
-});
-$(document).on('keydown', function pressIt(){
-  if ($('input:first').val()==='g'){
+function pressIt(){
+ $(document).on('keydown', function(key){
+  if (key.which == 71){
     alert('you pressed g!');
-  }
-});
-$('form').on('submit', function submitIt(){
-  alert('Your form is going to be submitted now.');
-});
+  } 
+}
 
+);
+
+function submitIt(){
+  $('form').on('submit', function(){
+    alert('Your form is going to be submitted now.');
+    });
+  }
+}
+
+$(document).ready(function(){
+getIt();
+frameIt();
+pressIt();
+submitIt();
 });
- 
